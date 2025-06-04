@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  ant-design-pro_web:
+    build: 
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    environment:
+      TZ : 'Asia/Shanghai'
+      PROTOCOL: https
+    ports:
+      - 80:80
+    container_name: 'ant-design-pro_web'
+    restart: unless-stopped
