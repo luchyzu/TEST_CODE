@@ -125,12 +125,6 @@
   //   ],
   // },
   {
-    name: 'Earthsdk3',
-    icon: 'table',
-    path: '/earthsdk3',
-    component: './Earthsdk3',
-  },
-  {
     name: 'ThreeJs',
     icon: 'table',
     path: '/ThreeJs',
