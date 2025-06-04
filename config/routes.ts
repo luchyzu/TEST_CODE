@@ -54,24 +54,24 @@
   //   path: '/demo',
   //   component: './ChartsDemo',
   // },
-  // {
-  //   name: 'leaflet',
-  //   icon: 'table',
-  //   path: '/leaflet',
-  //   component: './Leaflet',
-  // },
-  // {
-  //   name: 'MapDemo',
-  //   icon: 'table',
-  //   path: '/MapDemo',
-  //   component: './MapDemo',
-  // },
-  // {
-  //   name: 'VideoPoint',
-  //   icon: 'table',
-  //   path: '/VideoPoint',
-  //   component: './VideoPoint',
-  // },
+  {
+    name: 'leaflet',
+    icon: 'table',
+    path: '/leaflet',
+    component: './Leaflet',
+  },
+  {
+    name: 'MapDemo',
+    icon: 'table',
+    path: '/MapDemo',
+    component: './MapDemo',
+  },
+  {
+    name: 'VideoPoint',
+    icon: 'table',
+    path: '/VideoPoint',
+    component: './VideoPoint',
+  },
   // {
   //   name: 'ThreeJs',
   //   icon: 'table',
