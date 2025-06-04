@@ -1,0 +1,6 @@
+.leaflet-pane.leaflet-shadow-pane {
+    display: none;
+}
+.leaflet-default-icon-path {
+    background-image: url(https://tpc.googlesyndication.com/simgad/610734847882810615);
+}

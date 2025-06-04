@@ -5,10 +5,15 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet.pm';
 import 'leaflet.pm/dist/leaflet.pm.css';
 import './wmts';
+import './index.css';
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
+
 
 import { useModel } from 'umi';
 
-import { useUnmount, useSetState } from 'ahooks';
+import { useUnmount, useSetState, useMount } from 'ahooks';
 
 interface PropsType {
   handleAction: Function;
@@ -26,7 +31,8 @@ export default (props: PropsType) => {
     key: 'dc9b6dfbdb5e27e3d5bd621866110aab',
   });
 
-  useEffect(() => {
+  useMount(()=> {
+
     const devicewidth = document.documentElement.clientWidth;
     const scale = 1 / (devicewidth / 1920);
     setState({
@@ -39,7 +45,12 @@ export default (props: PropsType) => {
     var corner1 = L.latLng(-90, -180); //设置左上角经纬度
     var corner2 = L.latLng(90, 180);	//设置右下点经纬度
     var bounds = L.latLngBounds(corner1, corner2); //构建视图限制范
-    
+    let DefaultIcon = L.icon({
+      iconUrl: icon,
+      shadowUrl: iconShadow
+  });
+L.Marker.prototype.options.icon = DefaultIcon;
+
     let map = L.map('map', {
       center: [39.91184298474967, 116.39190673828126],
       zoom: 15,
@@ -81,15 +92,7 @@ export default (props: PropsType) => {
     map.pm.addControls({
       position: 'topleft',
       drawCircle: false,
-      drawRectangle: true,
-      drawPolyline: false,
-      drawPolygon: false,
-      drawMarker: false,
-      drawCircleMarker: false,
-      dragMode: false,
-      removalMode: false,
-      cutPolygon: false,
-      editMode: false,
+
     });
 
     map.on('pm:create', (e) => {
@@ -110,7 +113,9 @@ export default (props: PropsType) => {
     new L.control.attribution({ prefix: false }).addTo(map);
 
     setMap({ ...mapData!, map });
-  }, []);
+  
+  })
+  useEffect(() => {}, []);
 
   useUnmount(() => {
     setMap({ ...mapData!, map: null });

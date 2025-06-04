@@ -22,6 +22,13 @@ export default {
       changeOrigin: true,
       pathRewrite: { '^/test': 'http://www.kuaidi100.com' },
     },
+    '/proxy-data-map': {
+      target: 'http://localhost:8080',
+      // target,
+      secure: false,
+      changeOrigin: true,
+      // pathRewrite: { '^/dolphinscheduler': '' },
+    },
   },
   test: {
     '/api/': {

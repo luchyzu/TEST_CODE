@@ -131,6 +131,64 @@
     component: './Earthsdk3',
   },
   {
+    name: 'ThreeJs',
+    icon: 'table',
+    path: '/ThreeJs',
+    // layout: false,
+    component: './ThreeJs',
+  },
+  {
+    name: 'three1',
+    icon: 'table',
+    path: '/three1',
+    component: './ThreeJs/three1',
+  },
+  {
+    name: 'qiankunMap',
+    icon: 'table',
+    path: '/qiankunMap',
+    component: './qiankunMap',
+    routes: [
+      {
+        path: '/qiankunMap',
+      },
+      {
+        path: '/qiankunMap/*',
+      },
+    ]
+  },
+  {
+    name: 'Map',
+    icon: 'book',
+    path: 'data-map',
+    routes: [
+      {
+        name: 'Map2',
+        path: '*',
+        component: './qiankunMap',
+      },
+    ],
+  },
+  {
+    name: '组件',
+    icon: 'table',
+    path: '/zujian',
+    routes: [
+      {
+        name: '轮播图',
+        icon: 'table',
+        path: '/zujian/lunbo',
+        component: './Zujian/lunbo',
+      }
+    ]
+  },
+  {
+    name: 'Earthsdk3',
+    icon: 'table',
+    path: '/earthsdk3',
+    component: './Earthsdk3',
+  },
+  {
     path: '/',
     redirect: '/welcome',
   },

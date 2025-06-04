@@ -11,6 +11,9 @@ import defaultSettings from '../config/defaultSettings';
 
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
+import 'leaflet/dist/leaflet.css'
+
+import type { MicroApp } from 'qiankun';
 
 /** 获取用户信息比较慢的时候会展示一个 loading */
 export const initialStateConfig = {
@@ -25,6 +28,7 @@ export async function getInitialState(): Promise<{
   currentUser?: API.CurrentUser;
   loading?: boolean;
   fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
+  microApp?: MicroApp;
 }> {
   const fetchUserInfo = async () => {
     try {
